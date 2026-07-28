@@ -70,7 +70,8 @@ disp('Simulation Complete (No COM Port Needed).');
 
 
 ## Output:
-<img width="534" height="405" alt="WhatsApp Image 2026-07-28 at 3 35 40 PM" src="https://github.com/user-attachments/assets/6ebc7e9e-33dc-4e18-abf0-e1605c5bf61f" />
+<img width="551" height="485" alt="image" src="https://github.com/user-attachments/assets/a7ed2ca2-7008-4b8f-aba3-4f87a33146f3" />
+
 
 
 
