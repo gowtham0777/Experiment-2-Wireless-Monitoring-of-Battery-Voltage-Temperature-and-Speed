@@ -24,11 +24,54 @@ o	Parse and store voltage, temperature, and speed values.
 o	Display the data using real-time plots.
  
 ## Program:
+```
+clear; clc; close all;
+
+%% Simulation Setup
+dataPoints = 100;
+voltage = zeros(1, dataPoints);
+temperature = zeros(1, dataPoints);
+speed = zeros(1, dataPoints);
+timeStamp = linspace(0, 10, dataPoints);
+
+%% Data Acquisition Simulation (no COM port required)
+for i = 1:dataPoints
+    % --- Generate fake sensor values ---
+    voltage(i)     = 11 + rand()*2;     % Simulated battery voltage (11–13V)
+    temperature(i) = 25 + rand()*10;    % Simulated temp (25–35°C)
+    speed(i)       = rand()*80;         % Simulated speed (0–80 km/h)
+    
+    % --- Plot Battery Voltage ---
+    subplot(3,1,1);
+    plot(timeStamp(1:i), voltage(1:i), 'b', 'LineWidth', 2);
+    title('Battery Voltage Monitoring');
+    xlabel('Time (s)'); ylabel('Voltage (V)'); grid on;
+    
+    % --- Plot Temperature Data ---
+    subplot(3,1,2);
+    plot(timeStamp(1:i), temperature(1:i), 'r', 'LineWidth', 2);
+    title('Temperature Monitoring');
+    xlabel('Time (s)'); ylabel('Temperature (°C)'); grid on;
+    
+    % --- Plot Speed Data ---
+    subplot(3,1,3);
+    plot(timeStamp(1:i), speed(1:i), 'g', 'LineWidth', 2);
+    title('Speed Monitoring');
+    xlabel('Time (s)'); ylabel('Speed (km/h)'); grid on;
+    
+    drawnow;          % Update plots immediately
+    pause(0.1);       % Delay for real-time effect
+end
+
+disp('Simulation Complete (No COM Port Needed).');
+```
 
 
 
 
 ## Output:
+<img width="534" height="405" alt="WhatsApp Image 2026-07-28 at 3 35 40 PM" src="https://github.com/user-attachments/assets/6ebc7e9e-33dc-4e18-abf0-e1605c5bf61f" />
+
 
 
  
